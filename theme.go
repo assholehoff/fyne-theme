@@ -7,7 +7,7 @@ import (
 	"fyne.io/fyne/v2/theme"
 )
 
-/* package mitheme contains m(y) theme(s) */
+/* package theme contains my themes */
 
 const (
 	ColorNameGray      fyne.ThemeColorName = "gray"
