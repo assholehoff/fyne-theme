@@ -11,6 +11,10 @@ var _ fyne.Theme = (*Standard)(nil)
 
 type Standard struct{}
 
+func NewStandard() *Standard {
+	return &Standard{}
+}
+
 /* Color implements fyne.Theme. */
 func (Standard) Color(name fyne.ThemeColorName, variant fyne.ThemeVariant) color.Color {
 	switch name {
@@ -19,7 +23,6 @@ func (Standard) Color(name fyne.ThemeColorName, variant fyne.ThemeVariant) color
 			return color.NRGBA{R: 0x77, G: 0x77, B: 0x77, A: 0xff}
 		}
 		return color.NRGBA{R: 0x77, G: 0x77, B: 0x77, A: 0xff}
-		// return color.NRGBA{R: 0xde, G: 0xde, B: 0xde, A: 0xff}
 	case theme.ColorNameForeground:
 		if variant == theme.VariantLight {
 			return color.NRGBA{R: 0x27, G: 0x27, B: 0x27, A: 0xff}
@@ -38,9 +41,7 @@ func (Standard) Color(name fyne.ThemeColorName, variant fyne.ThemeVariant) color
 /* Font implements fyne.Theme. */
 func (Standard) Font(style fyne.TextStyle) fyne.Resource {
 	if style.Monospace {
-		// return fontGoMonoNF
 		return theme.DefaultTheme().Font(style)
-		// return fontGoMonoNFPR
 	}
 	if style.Italic {
 		if style.Bold {
