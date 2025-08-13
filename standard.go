@@ -63,12 +63,44 @@ func (Standard) Icon(name fyne.ThemeIconName) fyne.Resource {
 /* Size implements fyne.Theme. */
 func (Standard) Size(name fyne.ThemeSizeName) float32 {
 	switch name {
-	case theme.SizeNameInnerPadding:
-		return 2
-	case theme.SizeNamePadding:
-		return 4
+	case theme.SizeNameSeparatorThickness:
+		return 1
 	case theme.SizeNameCaptionText:
 		return 11
+	case theme.SizeNameInlineIcon:
+		return 20
+	case theme.SizeNameInnerPadding:
+		return 8
+	case theme.SizeNameLineSpacing:
+		return 4
+	case theme.SizeNamePadding:
+		return 4
+	case theme.SizeNameScrollBar:
+		return 12
+	case theme.SizeNameScrollBarSmall:
+		return 3
+	case theme.SizeNameText:
+		return 14
+	case theme.SizeNameHeadingText:
+		return 24
+	case theme.SizeNameSubHeadingText:
+		return 18
+	case theme.SizeNameInputBorder:
+		return 1
+	case theme.SizeNameInputRadius:
+		return 5
+	case theme.SizeNameSelectionRadius:
+		return 3
+	case theme.SizeNameScrollBarRadius:
+		return 3
+	case theme.SizeNameWindowButtonHeight:
+		return 16
+	case theme.SizeNameWindowButtonRadius:
+		return 8
+	case theme.SizeNameWindowButtonIcon:
+		return 14
+	case theme.SizeNameWindowTitleBarHeight:
+		return 26
 	case SizeNameMinorText:
 		return 10
 	default:
