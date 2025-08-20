@@ -1,8 +1,6 @@
 package theme
 
 import (
-	"time"
-
 	"fyne.io/fyne/v2"
 )
 
@@ -28,19 +26,3 @@ const (
 	SizeNamePrimaryText   fyne.ThemeSizeName = "primary"
 	SizeNameSecondaryText fyne.ThemeSizeName = "secondary"
 )
-
-func ThemeVariantWatcher(a fyne.App, t fyne.Theme) {
-	p := a.Settings().ThemeVariant()
-	fyne.DoAndWait(func() {
-		a.Settings().SetTheme(t)
-	})
-	ticker := time.NewTicker(500 * time.Millisecond)
-	defer ticker.Stop()
-	for range ticker.C {
-		v := a.Settings().ThemeVariant()
-		if v != p {
-			p = v
-			fyne.DoAndWait(func() { a.Settings().SetTheme(t) })
-		}
-	}
-}

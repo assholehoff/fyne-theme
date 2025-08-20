@@ -11,10 +11,6 @@ var _ fyne.Theme = (*Small)(nil)
 
 type Small struct{}
 
-func NewSmall() *Small {
-	return &Small{}
-}
-
 /* Color implements fyne.Theme. */
 func (Small) Color(name fyne.ThemeColorName, variant fyne.ThemeVariant) color.Color {
 	switch name {
